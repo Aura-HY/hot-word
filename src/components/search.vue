@@ -6,8 +6,8 @@
     <div class="search" >
       <!-- 搜索关键词 -->
       <!-- $route.params.keyword显示搜索关键词 -->
-       <h3> {{ $route.params.keyword }}</h3> 
-      <p> {{ p }}</p>
+       <h3> {{ wordName }}</h3> 
+      <p> {{ wordMeaning }}</p>
     </div>
   </div>
   <div class="end">
@@ -26,16 +26,16 @@ export default {
   data() {
     return {
       p: '', // 给属性 p 一个初始值
-      searchKeyWord:this.$route.params.searchKeyWord
-      
+      wordName:this.$route.params.wordName,
+      wordMeaning:this.$route.params.wordMeaning
     };
   },
-  created() {
-    this.searchContent(this.$route.params.searchKeyWord); // 调用搜索函数
-  },
+  // created() {
+  //   this.searchContent(this.$route.params.wordName); // 调用搜索函数
+  // },
   methods: {
     //传入路由参数中的关键词并进行搜索
-    searchContent(searchKeyWord) {
+    searchContent(wordName) {
       // 模拟搜索逻辑，这里可以替换为实际的搜索函数
       if (searchKeyWord === 'example') {
         this.p = this.searchKeyWord;
